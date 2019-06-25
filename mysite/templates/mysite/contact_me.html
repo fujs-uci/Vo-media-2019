@@ -1,0 +1,33 @@
+{% extends 'mysite/base.html' %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
+
+{% block title %}
+    Contact Me
+{% endblock %}
+
+{% block nav-one %}{% endblock %}
+{% block nav-two %}{% endblock %}
+{% block nav-three %}{% endblock %}
+{% block nav-four %}active{% endblock %}
+
+{% block content %}
+
+    <div class="row" style="padding-top: 25px; width: 100%;">
+        <div class="col-lg-4 offset-lg-4">
+            <h1 style="color: black;">Contact</h1>
+            {% if confirm_message %}
+                <h2>{{ title }}</h2>
+                {{ confirm_message }}
+            {% endif %}
+            {% if form %}
+                <form style="color: black;" method="post" action="">
+                {% csrf_token %}
+                {% crispy form %}
+                <input type="submit" value="SEND" class="btn btn-default" style="margin-bottom: 4.6rem;">
+            {% endif %}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

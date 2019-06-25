@@ -1,0 +1,16 @@
+{% extends 'mysite/base.html' %}
+
+{% block title %}
+    View Image
+{% endblock %}
+
+{% block content %}
+    <p> Dinh Did It</p>
+    <p> {{ image_view.title }}</p>
+    <p>
+    <img class="img-fluid" src="{{ image_view.path.url }}" alt="{{ image_view.title }}">
+    </p>
+    <p>
+    {{ image_view.description }}
+    </p>
+{% endblock %}

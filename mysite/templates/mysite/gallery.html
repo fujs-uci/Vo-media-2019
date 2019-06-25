@@ -1,0 +1,27 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block nav-one %}{% endblock %}
+{% block nav-two %}active{% endblock %}
+{% block nav-three %}{% endblock %}
+{% block nav-four %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <br>
+        <div class="row">
+            {% for image in gallery %}
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <a href="{% url "mysite:view_image" image.slug_me %}" data-size="1600x1067">
+                        <img alt="{{ image.title }}" src="{{ image.path.url }}" class="img-fluid z-depth-1">
+                    </a>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

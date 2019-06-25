@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Vo Media">
+    <meta name="description" content="Dinh Did It">
+    <meta name="keywords" content="Photography, Video Production">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "mysite/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "mysite/mystyle.css" %}">
+
+</head>
+<body>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url "mysite:home" %}">VO MEDIA</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "mysite:gallery" %}">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "mysite:contact_me" %}">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Page body-->
+{% block content %}
+{% endblock %}
+<!--/.Page body-->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="d-flex justify-content-center"><a href="#">Back to top</a></p>
+        <p class="m-0 text-center text-white">Copyright &copy; VO MEDIA 2019</p>
+    </div>
+
+    <!-- /.container -->
+</footer>
+
+
+<script src="{% static "mysite/jquery-3.2.1.slim.min.js" %}"></script>
+<script src="{% static "mysite/popper.min.js" %}"></script>
+<script src="{% static "mysite/bootstrap.min.js" %}"></script>
+</body>
+</html>
